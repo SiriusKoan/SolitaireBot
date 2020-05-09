@@ -38,7 +38,7 @@ class Game:
     def pass_round(self, word):
         self.rounds += 1
         try:
-            self.current_player = self.players[self.players.index(self.current_player)]
+            self.current_player = self.players[self.players.index(self.current_player) + 1]
         except IndexError:
             # to the last player, so next is the first player
             self.current_player = self.players[0]

@@ -36,3 +36,12 @@ def get_history(chat_id):
         return history
     else:
         return False
+
+def in_group(username, chat_id, games):
+    for i in games:
+        if games[i].chat_id < 0 and username in games[i].players:
+            chat_id = games[i].chat_id
+            return chat_id
+    if chat_id in games:
+        return chat_id
+    return False
